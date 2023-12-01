@@ -1,8 +1,5 @@
 import System.IO
 import Data.Char ( isDigit )
-import Control.Arrow
-import Control.Monad
-import Numeric
 
 main = do
     handle <- openFile "input.txt" ReadMode
