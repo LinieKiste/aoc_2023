@@ -10,11 +10,8 @@ main = do
     print $ solve contents
     hClose handle
 
-solve contents = sum intTuples
+solve xs = sum $ map toNumber (lines xs)
     where
-        intTuples = firstAndLast digits
-        firstAndLast = map (\xs -> read (head xs:[last xs]) :: Integer)
-        digits = toDigits contents :: [String]
-        toDigits xs = map (filter isDigit) (lines xs)
+        toNumber = (\xs -> read (head xs:[last xs]) :: Integer) . filter isDigit
 
 
